@@ -1,1 +1,51 @@
+[build-system]
+requires = ["setuptools>=62", "wheel"]
+build-backend = "setuptools.build_meta"
 
+[project]
+name = "minimax-performance-tools"
+version = "0.1.0"
+description = "Performance benchmarking tools for Minimax AI agents"
+readme = {file = "README.md", content-type = "text/markdown"}  # Added content-type
+requires-python = ">=3.8"
+license = "MIT"  # Simplified to SPDX identifier
+authors = [
+    {name = "AI Performance Research Team", email = "research@example.com"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "numpy>=1.21.0",
+    "pandas>=1.3.0",
+    "matplotlib>=3.4.0",
+    "psutil>=5.8.0",
+    "requests>=2.25.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "black>=21.0",
+    "flake8>=3.9",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-username/minimax-performance-tools"
+Repository = "https://github.com/your-username/minimax-performance-tools"
+Issues = "https://github.com/your-username/minimax-performance-tools/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["minimax_tools"]  # Exact package name
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+minimax_tools = ["*.json", "*.yaml"]
